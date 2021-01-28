@@ -1,0 +1,20 @@
+import  requests
+from bs4 import BeautifulSoup
+
+url = "https://comic.naver.com/webtoon/weekday.nhn" #네이버 웹툰
+res = requests.get(url)
+res.raise_for_status()#오류면 종료
+
+soup = BeautifulSoup(res.text, "lxml")
+
+num = 1
+rank = [10]  #list를 사용할때는 미리 범위를 지정해 줘야 값을 넣을 수 있음.
+while num <= 9:
+    rank.append(soup.find("li", attrs={"class": "rank0" + str(num)}))
+    print("{0}위는".format(num), rank[num].a["title"])
+    num += 1
+
+# for i in range(1,10):
+#     rank.append(soup.find("li", attrs={"class": "rank0" + str(num)}))
+#     print("{0}위는".format(num), rank[num].a["title"])
+#     num += 1
