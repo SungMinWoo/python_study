@@ -14,7 +14,6 @@ while num <= 9:
     print("{0}위는".format(num), rank[num].a["title"])
     num += 1
 
-# for i in range(1,10):
-#     rank.append(soup.find("li", attrs={"class": "rank0" + str(num)}))
-#     print("{0}위는".format(num), rank[num].a["title"])
-#     num += 1
+# for num in range(1, 11): #for 버전
+#     rank = soup.find("li", attrs={"class": "rank" + str(num).zfill(2)})
+#     print("{0}위는".format(num), rank.a["title"])
