@@ -5,12 +5,11 @@ from collections import Counter
 #from konlpy.tag import Twitter #Okt로 바뀜
 
 file = open('C:\\Users\\Administrator\\Desktop\\study_example\\test.txt', 'r')
-a = file.read()
-nlp
+data = file.read()
 dat = Okt()
 nouns = nlp.nouns(data)
 count_word = Counter(nouns) #counter을 통해 단어마다 수를 사전형태로 변환
-#tag2 = count.most_common(40) # 상위 40가지를 추출
+#tag2 = count_word.most_common(40) # 상위 40가지를 추출
 
 font_path = 'C:\\Windows\\Fonts\\NanumGothic.ttf' #폰트 설정
 wc = WordCloud(
